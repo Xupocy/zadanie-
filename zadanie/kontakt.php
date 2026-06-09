@@ -3,7 +3,6 @@ session_start();
 require_once 'db.php';
 
 if (isset($_POST['send_msg'])) {
-    // Prosta symulacja odebrania wiadomości w PHP
     echo "<script>alert('Dziękujemy! Wiadomość została wysłana.'); window.location.href='kontakt.php';</script>";
     exit;
 }
