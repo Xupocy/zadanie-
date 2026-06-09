@@ -2,7 +2,6 @@
 session_start();
 require_once 'db.php';
 
-// Obsługa dodawania do koszyka
 if (isset($_GET['action']) && $_GET['action'] == 'add') {
     $p_id = intval($_GET['id']);
     if (!isset($_SESSION['cart'])) {
@@ -17,7 +16,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'add') {
     exit;
 }
 
-// Zmiana ilości przedmiotów w dolnym podglądzie
 if (isset($_GET['action']) && isset($_GET['id'])) {
     $id = intval($_GET['id']);
     if ($_GET['action'] == 'inc') {
@@ -32,7 +30,6 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
     exit;
 }
 
-// Obliczanie wartości koszyka do nagłówka
 $cart_count = 0;
 $cart_total = 0;
 if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
